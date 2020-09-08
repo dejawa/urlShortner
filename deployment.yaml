@@ -17,7 +17,7 @@ spec:
         app: shortener
     spec:
       containers:
-      - image: 431645317804.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
+      - image: {awsaccount}.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
         imagePullPolicy: Always
         name: shortener
         ports:

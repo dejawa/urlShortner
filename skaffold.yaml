@@ -4,7 +4,7 @@ metadata:
   name: url
 build:
   artifacts:
-  - image: 431645317804.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
+  - image: {awsaccount}.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
     context: .
     sync:
       manual:
