@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: url
+build:
+  artifacts:
+  - image: 431645317804.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
+    context: .
+    sync:
+      manual:
+      - src: '.'
+        dest: .
+deploy:
+  kubectl:
+    manifests:
+    - deployment.yaml

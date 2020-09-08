@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shortener
+  name: shortener
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: shortener
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: shortener
+    spec:
+      containers:
+      - image: 431645317804.dkr.ecr.ap-northeast-2.amazonaws.com/shortner
+        imagePullPolicy: Always
+        name: shortener
+        ports:
+        - name: shortener
+          containerPort: 8000
+        env:
+          - name: ENV
+            value: DEV
+          - name: DB_HOST
+            value: postgres
+          - name: REDIS_HOST
+            value: redis
+
+
+
+# ---
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: greet-server-service
+# spec:
+#   selector:
+#     app: greet-server
+#   ports:
+#     - port: 80
+#       targetPort: 50051
+#       name: node
+
